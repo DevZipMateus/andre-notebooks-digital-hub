@@ -32,8 +32,8 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-lg shadow-elegant' : 'bg-white/90 backdrop-blur-sm'
-    }`}>
+      scrolled ? 'shadow-elegant' : ''
+    }`} style={{ backgroundColor: '#1f2535' }}>
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -45,31 +45,31 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('inicio')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-primary transition-colors font-medium"
             >
               Início
             </button>
             <button
               onClick={() => scrollToSection('servicos')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-primary transition-colors font-medium"
             >
               Serviços
             </button>
             <button
               onClick={() => scrollToSection('sobre')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-primary transition-colors font-medium"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection('galeria')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-primary transition-colors font-medium"
             >
               Galeria
             </button>
             <button
               onClick={() => scrollToSection('contato')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-white hover:text-primary transition-colors font-medium"
             >
               Contato
             </button>
@@ -81,14 +81,14 @@ const Header = () => {
               <Phone className="h-4 w-4 text-primary" />
               <a 
                 href="https://wa.me/5511982986431" 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium text-white hover:text-primary transition-colors"
               >
                 (11) 98298-6431
               </a>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4 text-accent" />
-              <span className="text-sm text-muted-foreground">Rua Embaré, 20</span>
+              <span className="text-sm text-white/80">Rua Embaré, 20</span>
             </div>
           </div>
 
@@ -96,7 +96,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden text-white hover:text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -105,35 +105,35 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-t shadow-elegant">
+          <div className="md:hidden absolute top-full left-0 right-0 border-t shadow-elegant" style={{ backgroundColor: '#1f2535' }}>
             <div className="px-4 py-6 space-y-4">
               <button
                 onClick={() => scrollToSection('inicio')}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+                className="block w-full text-left py-2 text-white hover:text-primary transition-colors font-medium"
               >
                 Início
               </button>
               <button
                 onClick={() => scrollToSection('servicos')}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+                className="block w-full text-left py-2 text-white hover:text-primary transition-colors font-medium"
               >
                 Serviços
               </button>
               <button
                 onClick={() => scrollToSection('sobre')}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+                className="block w-full text-left py-2 text-white hover:text-primary transition-colors font-medium"
               >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection('galeria')}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+                className="block w-full text-left py-2 text-white hover:text-primary transition-colors font-medium"
               >
                 Galeria
               </button>
               <button
                 onClick={() => scrollToSection('contato')}
-                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+                className="block w-full text-left py-2 text-white hover:text-primary transition-colors font-medium"
               >
                 Contato
               </button>
@@ -142,14 +142,14 @@ const Header = () => {
                   <Phone className="h-4 w-4 text-primary" />
                   <a 
                     href="https://wa.me/5511982986431" 
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    className="text-sm font-medium text-white hover:text-primary transition-colors"
                   >
                     (11) 98298-6431
                   </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4 text-accent" />
-                  <span className="text-sm text-muted-foreground">Rua Embaré, 20</span>
+                  <span className="text-sm text-white/80">Rua Embaré, 20</span>
                 </div>
               </div>
             </div>
