@@ -23,7 +23,7 @@ export function ProductCarousel() {
   );
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto px-4">
       <Carousel
         plugins={[plugin.current]}
         className="w-full"
@@ -32,9 +32,9 @@ export function ProductCarousel() {
           loop: true,
         }}
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-2 md:-ml-4">
           {galleryImages.map((image) => (
-            <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+            <CarouselItem key={image.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <div className="p-1">
                 <Dialog>
                   <DialogTrigger asChild>
@@ -51,12 +51,12 @@ export function ProductCarousel() {
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                  <DialogContent className="max-w-[95vw] sm:max-w-4xl max-h-[90vh] p-2 sm:p-4">
                     <div className="relative">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-auto max-h-[80vh] object-contain"
+                        className="w-full h-auto max-h-[70vh] sm:max-h-[80vh] object-contain rounded-lg"
                       />
                     </div>
                   </DialogContent>
@@ -65,8 +65,8 @@ export function ProductCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <CarouselPrevious className="left-2 hidden sm:flex" />
+        <CarouselNext className="right-2 hidden sm:flex" />
       </Carousel>
     </div>
   );

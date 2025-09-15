@@ -5,22 +5,22 @@ import logo from '@/assets/logo.png';
 const Hero = () => {
   return (
     <section id="inicio" className="min-h-screen bg-gradient-hero flex items-center pt-20">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <div className="text-white space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <div className="text-white space-y-6 lg:space-y-8">
+            <div className="space-y-3 lg:space-y-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 André Conserto de Notebooks e PCs
               </h1>
-              <h2 className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-white/90 font-medium leading-relaxed">
                 Profissional com 26 anos de experiência em manutenção e upgrade de hardware PC e software Windows. 
                 Reparos rápidos e garantidos com o melhor custo-benefício.
               </h2>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-center space-x-3">
                   <div className="bg-accent/20 p-2 rounded-lg">
@@ -80,7 +80,7 @@ const Hero = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center space-x-6 text-white/80">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-white/80">
               <div className="flex items-center space-x-2">
                 <Shield className="h-5 w-5 text-success" />
                 <span className="text-sm">Atendimento 24h</span>
@@ -93,13 +93,13 @@ const Hero = () => {
           </div>
 
           {/* Logo/Image */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
               <img 
                 src={logo} 
                 alt="André Notebooks - Especialista em reparo de notebooks e PCs" 
-                className="relative z-10 w-full max-w-md h-auto drop-shadow-2xl"
+                className="relative z-10 w-full max-w-xs sm:max-w-md h-auto drop-shadow-2xl"
               />
             </div>
           </div>

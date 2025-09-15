@@ -51,7 +51,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((highlight, index) => (
                 <Card key={index} className="border-border/50">
                   <CardContent className="p-4">
@@ -79,24 +79,24 @@ const About = () => {
           {/* Stats & Testimonials */}
           <div className="space-y-8">
             {/* Stats */}
-            <div className="bg-gradient-hero rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6 text-center">Nossos números</h3>
-              <div className="grid grid-cols-2 gap-6">
+            <div className="bg-gradient-hero rounded-2xl p-6 sm:p-8 text-white">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Nossos números</h3>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">26</div>
-                  <div className="text-white/80">Anos de experiência</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 sm:mb-2">26</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Anos de experiência</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent mb-2">218</div>
-                  <div className="text-white/80">Avaliações 5★</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent mb-1 sm:mb-2">218</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Avaliações 5★</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-success mb-2">3</div>
-                  <div className="text-white/80">Meses garantia</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-success mb-1 sm:mb-2">3</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Meses garantia</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">24h</div>
-                  <div className="text-white/80">Atendimento</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 sm:mb-2">24h</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Atendimento</div>
                 </div>
               </div>
             </div>

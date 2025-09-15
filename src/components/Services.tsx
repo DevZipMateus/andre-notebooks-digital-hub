@@ -66,7 +66,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <Card 
               key={index} 
@@ -90,12 +90,12 @@ const Services = () => {
         </div>
 
         {/* Guarantee Banner */}
-        <div className="mt-16 bg-gradient-primary rounded-2xl p-8 text-center text-white">
-          <div className="flex items-center justify-center mb-4">
-            <ShieldCheck className="h-12 w-12 mr-4" />
-            <div>
-              <h3 className="text-2xl font-bold">Garantia de 3 meses</h3>
-              <p className="text-white/90">Para todos os serviços realizados</p>
+        <div className="mt-12 lg:mt-16 bg-gradient-primary rounded-2xl p-6 sm:p-8 text-center text-white">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-3 sm:space-y-0">
+            <ShieldCheck className="h-10 sm:h-12 w-10 sm:w-12 sm:mr-4" />
+            <div className="text-center sm:text-left">
+              <h3 className="text-xl sm:text-2xl font-bold">Garantia de 3 meses</h3>
+              <p className="text-white/90 text-sm sm:text-base">Para todos os serviços realizados</p>
             </div>
           </div>
           <p className="text-white/80 max-w-2xl mx-auto">

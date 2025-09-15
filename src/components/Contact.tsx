@@ -15,7 +15,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
             <Card className="border-border/50 hover:shadow-elegant transition-shadow">
@@ -135,12 +135,13 @@ const Contact = () => {
                   <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.857384125313!2d-46.642613723787!3d-23.609447163362265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a48594b8e9f%3A0xd06f35791877b1e9!2sR.%20Embar%C3%A9%2C%2020%20-%20Mirand%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004052-050!5e0!3m2!1spt-BR!2sbr!4v1757032613667!5m2!1spt-BR!2sbr" 
                     width="100%" 
-                    height="400" 
+                    height="300" 
                     style={{border: 0}} 
                     allowFullScreen 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Localização André Notebooks - Rua Embaré, 20, Mirandópolis, São Paulo"
+                    className="sm:h-[400px]"
                   />
                 </div>
               </CardContent>
@@ -148,7 +149,7 @@ const Contact = () => {
 
             {/* CTA Card */}
             <Card className="bg-gradient-primary text-white border-0">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-6 sm:p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">
                   Pronto para resolver seu problema?
                 </h3>
