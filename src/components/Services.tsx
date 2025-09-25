@@ -6,51 +6,83 @@ import {
   Settings, 
   ShieldCheck,
   Wrench,
-  Download
+  Download,
+  ChevronDown,
+  Battery,
+  Gamepad2,
+  Keyboard,
+  Zap
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
-  const services = [
+  const serviceCategories = [
     {
-      icon: <Download className="h-8 w-8" />,
-      title: "Formatação de computadores",
-      description: "Formatação completa com instalação limpa do sistema operacional"
-    },
-    {
-      icon: <Monitor className="h-8 w-8" />,
-      title: "Reinstalação de sistemas",
-      description: "Windows, Linux e OSX com drivers e atualizações"
-    },
-    {
-      icon: <Cpu className="h-8 w-8" />,
-      title: "Diagnóstico PC Gamer",
-      description: "Diagnóstico preciso para computadores gamer de alto desempenho"
-    },
-    {
-      icon: <Settings className="h-8 w-8" />,
-      title: "Limpeza completa",
-      description: "Limpeza detalhada de hardware e otimização do sistema"
-    },
-    {
-      icon: <HardDrive className="h-8 w-8" />,
-      title: "Instalação de softwares",
-      description: "Instalação e configuração de programas diversos"
-    },
-    {
+      title: "Reparo de Hardware",
       icon: <Wrench className="h-8 w-8" />,
-      title: "Montagem de PCs",
-      description: "Montagem de computadores office, gamer e workstation"
+      description: "Soluções especializadas em reparo de componentes",
+      services: [
+        "Reparo em placa-mãe de notebook",
+        "Troca de tela, bateria e teclado de notebook",
+        "Instalação de SSD, NVME e Memória RAM",
+        "Bateria e Carregadores",
+        "Reparo de componentes eletrônicos"
+      ]
     },
     {
-      icon: <ShieldCheck className="h-8 w-8" />,
-      title: "Reparo em placa-mãe",
-      description: "Reparo especializado em placas-mãe de notebook e PC gamer"
+      title: "PC Gamer",
+      icon: <Gamepad2 className="h-8 w-8" />,
+      description: "Serviços especializados para computadores gamer",
+      services: [
+        "Limpeza física e diagnóstico de PC Gamer",
+        "Montagem de PCs gamer personalizados",
+        "Otimização de performance para jogos",
+        "Instalação de placas de vídeo",
+        "Overclock seguro de componentes"
+      ]
     },
     {
+      title: "Notebooks",
       icon: <Laptop className="h-8 w-8" />,
-      title: "Manutenção de notebooks",
-      description: "Troca de tela, bateria, teclado das maiores marcas"
+      description: "Manutenção completa para notebooks",
+      services: [
+        "Troca de tela LCD/LED",
+        "Substituição de teclado",
+        "Troca de bateria",
+        "Reparo de carregadores",
+        "Limpeza interna completa"
+      ]
+    },
+    {
+      title: "Sistemas Operacionais",
+      icon: <Download className="h-8 w-8" />,
+      description: "Instalação e configuração de sistemas",
+      services: [
+        "Reinstalação de Windows",
+        "Formatação completa",
+        "Instalação de drivers",
+        "Configuração de sistema",
+        "Instalação de softwares essenciais"
+      ]
+    },
+    {
+      title: "Manutenção Geral",
+      icon: <Settings className="h-8 w-8" />,
+      description: "Serviços diversos de manutenção",
+      services: [
+        "Limpeza física completa",
+        "Diagnóstico de problemas",
+        "Montagem de computadores",
+        "Instalação de periféricos",
+        "E muito mais!"
+      ]
     }
   ];
 
@@ -66,24 +98,51 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {serviceCategories.map((category, index) => (
             <Card 
               key={index} 
               className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-primary/50"
             >
-              <CardContent className="p-6 text-center">
-                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <div className="text-primary group-hover:scale-110 transition-transform">
-                    {service.icon}
+              <CardContent className="p-6">
+                <div className="text-center mb-4">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <div className="text-primary group-hover:scale-110 transition-transform">
+                      {category.icon}
+                    </div>
                   </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">
+                    {category.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {category.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold mb-3 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-between hover:bg-primary/5 hover:border-primary/50"
+                    >
+                      Ver serviços
+                      <ChevronDown className="h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-80 max-h-64 overflow-y-auto bg-background border-border">
+                    {category.services.map((service, serviceIndex) => (
+                      <DropdownMenuItem 
+                        key={serviceIndex}
+                        className="cursor-pointer hover:bg-primary/5 focus:bg-primary/5 text-foreground py-3 px-4"
+                      >
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
+                          <span className="text-sm">{service}</span>
+                        </div>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </CardContent>
             </Card>
           ))}
